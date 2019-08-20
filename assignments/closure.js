@@ -12,7 +12,7 @@ function sumNums(x, y) {
     console.log(`The sum of ${x} and ${y} is ${sum}`)
   })(result);
 }
-sumNums(3, 6);
+// sumNums(3, 6);
 
 
 /* STRETCH PROBLEMS, Do not attempt until you have completed all previous tasks for today's project files */
