@@ -38,19 +38,24 @@ const items = ['Pencil', 'Notebook', 'yo-yo', 'Gum'];
   // "this Pencil is worth a million dollars!"
 */
 
+// Callback Function
+function logsToConsole(param) {
+  console.log(param)
+}
+
 
 function getLength(arr, cb) {
   // getLength passes the length of the array into the callback.
   return cb(arr.length);
 }
-// getLength(items, arrayLen => console.log(`The length of the array is ${arrayLen}`));
+getLength(items, logsToConsole);
 
 
 function last(arr, cb) {
   // last passes the last item of the array into the callback.
   return cb(arr[arr.length - 1]);
 }
-// last(items, item => console.log(`The last item of the array is ${item}`));
+last(items, logsToConsole);
 
 
 function sumNums(x, y, cb) {
@@ -58,7 +63,7 @@ function sumNums(x, y, cb) {
   let result = x + y;
   return cb(result);
 }
-// sumNums(2, 3, result => console.log(`The sum of the numbers is ${result}`));
+sumNums(2, 3, logsToConsole);
 
 
 function multiplyNums(x, y, cb) {
@@ -66,7 +71,7 @@ function multiplyNums(x, y, cb) {
   let result = x * y;
   return cb(result);
 }
-// multiplyNums(2, 3, result => console.log(`The sum of the numbers is ${result}`));
+multiplyNums(2, 3, logsToConsole);
 
 
 function contains(item, list, cb) {
@@ -93,4 +98,4 @@ function removeDuplicates(array, cb) {
   return cb(duplicateFreeArray);
 }
 
-// removeDuplicates(numbers, newArray => console.log(`The new duplicate free array: ${newArray}`));
+removeDuplicates(numbers, logsToConsole);
