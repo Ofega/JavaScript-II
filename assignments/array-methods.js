@@ -61,7 +61,6 @@ let fullNames = [];
 
 runners.forEach(runner => {
   let runnerName = `${runner.first_name} ${runner.last_name}`;
-
   fullNames.push(runnerName);
 });
 

@@ -89,8 +89,8 @@ function removeDuplicates(array, cb) {
   // removeDuplicates removes all duplicate values from the given array.
   // Pass the duplicate free array to the callback function.
   // Do not mutate the original array.
-  let duplicateFreeArray = array.reduce((acc, item) => acc.includes(item) ? acc : [...acc, item], []);
+  let duplicateFreeArray = array.filter((item, index) => array.indexOf(item) === index);
   return cb(duplicateFreeArray);
 }
 
-// removeDuplicates(numbers, newArray => console.log(`The new duplicate free array: ${newArray}`));
+removeDuplicates(numbers, newArray => console.log(`The new duplicate free array: ${newArray}`));
