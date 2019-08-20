@@ -91,15 +91,7 @@ let ticketPriceTotal = runners.reduce((acc, runner) => acc + runner.donation, 0)
 // Now that you have used .forEach(), .map(), .filter(), and .reduce().  I want you to think of potential problems you could solve given the data set and the 5k fun run theme.  Try to create and then solve 3 unique problems using one or many of the array methods listed above.
 
 // Problem 1
-// Group contestants based on their companies
-const groupedByCompany = runners.map(function(runner) {
-
-});
-
-console.log(groupedByCompany);
 
 // Problem 2
 
 // Problem 3
-
-// { id: 1, first_name: "Charmain", last_name: "Seiler", email: "cseiler0@wired.com", shirt_size: "2XL", company_name: "Divanoodle", donation: 75 },

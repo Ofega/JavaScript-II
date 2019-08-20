@@ -44,14 +44,14 @@ const improvedCounterMaker = () => {
   }
 };
 // Example usage: 
-const myCounter = improvedCounterMaker();
+// const myCounter = improvedCounterMaker();
 // console.log(myCounter(5)); // 1
 // console.log(myCounter(5)); // 2
 // console.log(myCounter(5)); // 3
 // console.log(myCounter(5)); // 4
 // console.log(myCounter(5)); // 5
-// console.log(myCounter(5)); // 6
-// console.log(myCounter(5)); // 7
+// console.log(myCounter(5)); // 1
+// console.log(myCounter(5)); // 2
 
 
 // ==== Challenge 4: Create a counter function with an object that can increment and decrement ====
