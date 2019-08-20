@@ -7,13 +7,11 @@
 function sumNums(x, y) {
   // sumNums adds two numbers (x, y) and passes the result to the callback.
   let result = x + y;
-  return result;
 
-  // return (function(sum) {
-  //   console.log(`The sum of ${x} and ${y} is ${sum}`)
-  // })(result);
+  return (function(sum) {
+    console.log(`The sum of ${x} and ${y} is ${sum}`)
+  })(result);
 }
-
 sumNums(3, 6);
 
 
@@ -22,24 +20,58 @@ sumNums(3, 6);
 
 // ==== Challenge 2: Implement a "counter maker" function ====
 const counterMaker = () => {
-  // IMPLEMENTATION OF counterMaker:
-  // 1- Declare a `count` variable with a value of 0. We will be mutating it, so declare it using `let`!
-  // 2- Declare a function `counter`. It should increment and return `count`.
-  //      NOTE: This `counter` function, being nested inside `counterMaker`,
-  //      "closes over" the `count` variable. It can "see" it in the parent scope!
-  // 3- Return the `counter` function.
+  let count = 0;
+
+  return function counter() {
+    return ++count; 
+  }
 };
-// Example usage: const myCounter = counterMaker();
-// myCounter(); // 1
-// myCounter(); // 2
+// Example usage: 
+// const myCounter = counterMaker();
+// console.log(myCounter()); // 1
+// console.log(myCounter()); // 2
+
 
 // ==== Challenge 3: Make `counterMaker` more sophisticated ====
 // It should have a `limit` parameter. Any counters we make with `counterMaker`
 // will refuse to go over the limit, and start back at 1.
+const improvedCounterMaker = () => {
+  let count = 0;
+  let limit = 5;
+
+  return function counter() {
+    count = count >= limit ? 1 : ++count;
+    return count; 
+  }
+};
+// Example usage: 
+// const myCounter = improvedCounterMaker();
+// console.log(myCounter()); // 1
+// console.log(myCounter()); // 2
+// console.log(myCounter()); // 3
+// console.log(myCounter()); // 4
+// console.log(myCounter()); // 5
+// console.log(myCounter()); // 6
+// console.log(myCounter()); // 7
+
 
 // ==== Challenge 4: Create a counter function with an object that can increment and decrement ====
 const counterFactory = () => {
   // Return an object that has two methods called `increment` and `decrement`.
   // `increment` should increment a counter variable in closure scope and return it.
   // `decrement` should decrement the counter variable and return it.
+  let counter = 0;
+  return {
+    increment: function() {
+      return ++counter;
+    },
+    decrement: function() {
+      return --counter;
+    }
+  }
 };
+
+// const myCounter = counterFactory();
+// console.log(myCounter.increment());
+// console.log(myCounter.increment());
+// console.log(myCounter.decrement());

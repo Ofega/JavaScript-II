@@ -93,4 +93,4 @@ function removeDuplicates(array, cb) {
   return cb(duplicateFreeArray);
 }
 
-removeDuplicates(numbers, newArray => console.log(`The new duplicate free array: ${newArray}`));
+// removeDuplicates(numbers, newArray => console.log(`The new duplicate free array: ${newArray}`));
