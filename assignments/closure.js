@@ -4,6 +4,18 @@
 // that manipulates variables defined in the outer scope.
 // The outer scope can be a parent function, or the top level of the script.
 
+function sumNums(x, y) {
+  // sumNums adds two numbers (x, y) and passes the result to the callback.
+  let result = x + y;
+  return result;
+
+  // return (function(sum) {
+  //   console.log(`The sum of ${x} and ${y} is ${sum}`)
+  // })(result);
+}
+
+sumNums(3, 6);
+
 
 /* STRETCH PROBLEMS, Do not attempt until you have completed all previous tasks for today's project files */
 
