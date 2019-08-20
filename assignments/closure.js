@@ -37,22 +37,21 @@ const counterMaker = () => {
 // will refuse to go over the limit, and start back at 1.
 const improvedCounterMaker = () => {
   let count = 0;
-  let limit = 5;
 
-  return function counter() {
+  return function counter(limit) {
     count = count >= limit ? 1 : ++count;
     return count; 
   }
 };
 // Example usage: 
-// const myCounter = improvedCounterMaker();
-// console.log(myCounter()); // 1
-// console.log(myCounter()); // 2
-// console.log(myCounter()); // 3
-// console.log(myCounter()); // 4
-// console.log(myCounter()); // 5
-// console.log(myCounter()); // 6
-// console.log(myCounter()); // 7
+const myCounter = improvedCounterMaker();
+// console.log(myCounter(5)); // 1
+// console.log(myCounter(5)); // 2
+// console.log(myCounter(5)); // 3
+// console.log(myCounter(5)); // 4
+// console.log(myCounter(5)); // 5
+// console.log(myCounter(5)); // 6
+// console.log(myCounter(5)); // 7
 
 
 // ==== Challenge 4: Create a counter function with an object that can increment and decrement ====
